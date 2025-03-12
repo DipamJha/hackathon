@@ -10,8 +10,8 @@ interface StartupCardProps {
 
 export function StartupCard({ startup, onLike }: StartupCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-      <h3 className="text-xl font-semibold mb-2">{startup.title}</h3>
+    <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 hover:scale-105">
+      <h3 className="text-xl font-semibold mb-2 text-custom-purple">{startup.title}</h3>
       <p className="text-gray-600 mb-4">{startup.description}</p>
       
       <div className="space-y-2 mb-4">
@@ -22,20 +22,14 @@ export function StartupCard({ startup, onLike }: StartupCardProps) {
           ))}
         </ul>
       </div>
-
+    
       <div className="flex items-center justify-between mt-4">
-        <button
-          onClick={() => onLike(startup.id)}
-          className="flex items-center gap-2 text-gray-600 hover:text-red-500 transition-colors"
-        >
+        <button onClick={() => onLike(startup.id)} className="flex items-center gap-2 text-gray-600 hover:text-red-500 transition-colors">
           <Heart size={20} />
           <span>{startup.likes}</span>
         </button>
         
-        <Link
-          to={`/startup/${startup.id}`}
-          className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors"
-        >
+        <Link to={`/startup/${startup.id}`} className="flex items-center gap-2 text-custom-blue hover:text-blue-700 transition-colors">
           View Details
           <ArrowRight size={20} />
         </Link>

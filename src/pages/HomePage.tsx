@@ -36,11 +36,8 @@ export function HomePage() {
   return (
     <div className="space-y-8">
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold">Trending Startups</h1>
-        <Link
-          to="/startup/new"
-          className="bg-blue-600 text-white px-4 py-2 rounded-md flex items-center gap-2 hover:bg-blue-700"
-        >
+        <h1 className="text-3xl font-bold text-custom-blue">Trending Startups</h1>
+        <Link to="/startup/new" className="bg-gradient-to-r from-custom-green to-custom-blue text-white px-4 py-2 rounded-md flex items-center gap-2 hover:from-green-600 hover:to-blue-700 transition-colors duration-300">
           <PlusCircle size={20} />
           Add Startup
         </Link>
@@ -48,11 +45,7 @@ export function HomePage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {startups.map(startup => (
-          <StartupCard
-            key={startup.id}
-            startup={startup}
-            onLike={handleLike}
-          />
+          <StartupCard key={startup.id} startup={startup} onLike={handleLike} />
         ))}
       </div>
     </div>

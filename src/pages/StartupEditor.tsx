@@ -188,8 +188,8 @@ export function StartupEditor() {
         <button
           onClick={() => setShowAiAssistant(!showAiAssistant)}
           className={classNames(
-            'absolute bottom-6 right-6 p-3 rounded-full shadow-lg transition-all transform hover:scale-110',
-            showAiAssistant ? 'bg-blue-600 text-white' : 'bg-white text-gray-600'
+            'fixed bottom-6 right-6 p-3 rounded-full shadow-lg transition-all transform hover:scale-110 animate-bounce',
+            showAiAssistant ? 'bg-custom-blue text-white' : 'bg-white text-gray-600'
           )}
         >
           <MessageSquare size={24} />
